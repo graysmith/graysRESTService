@@ -6,6 +6,13 @@ apply plugin: "eclipse"
 apply plugin: "maven"
 
 
+sourceCompatibility = '1.8'
+
+repositories {
+	jcenter()
+}
+
+
 jacoco {
     toolVersion = "0.7.5.201505241946"
 }
@@ -13,6 +20,7 @@ jacoco {
 dependencies {
     compile "org.glassfish.jersey.containers:jersey-container-servlet:2.22.1"
     compile "com.amazonaws:aws-java-sdk-dynamodb:1.10.49"
+	compile "org.json:json:20090211"
 
     testCompile "junit:junit:4.12"
     testCompile "org.mockito:mockito-all:1.10.19"
@@ -22,6 +30,8 @@ dependencies {
 jettyRunWar {
     contextPath = ''
 }
-httpPort = 8080
+httpPort = 8180
 stopPort = 9090
 stopKey = "stopKey"
+
+
